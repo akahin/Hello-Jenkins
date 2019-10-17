@@ -1,0 +1,240 @@
+ÓÉ SCM ±ä¸üÆô¶¯
+¹¹½¨ÖÐ ÔÚ¹¤×÷¿Õ¼ä C:\Program Files (x86)\Jenkins\workspace\game-of-life-default ÖÐ
+ > git.exe rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git.exe config remote.origin.url https://github.com/Joyounger/game-of-life.git # timeout=10
+Fetching upstream changes from https://github.com/Joyounger/game-of-life.git
+ > git.exe --version # timeout=10
+ > git.exe fetch --tags --progress https://github.com/Joyounger/game-of-life.git +refs/heads/*:refs/remotes/origin/*
+ > git.exe rev-parse "refs/remotes/origin/master^{commit}" # timeout=10
+ > git.exe rev-parse "refs/remotes/origin/origin/master^{commit}" # timeout=10
+Checking out Revision 27592f990170529964fad0039a98f2842f3f8e47 (refs/remotes/origin/master)
+ > git.exe config core.sparsecheckout # timeout=10
+ > git.exe checkout -f 27592f990170529964fad0039a98f2842f3f8e47
+Commit message: "Changes stars to pluses"
+ > git.exe rev-list --no-walk d4e03f28a7ccfeca4dcf21006a6ff199329ed979 # timeout=10
+[game-of-life-default] $ cmd.exe /C '""C:\Program Files\apache-maven-3.5.4\bin\mvn.cmd"' clean package && exit %%ERRORLEVEL%%"
+[INFO] Scanning for projects...
+[8mha:////4LDHJxk5PCBRZISTpw6ab9DZVeatmw2qiDZ0IhomswYTAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] 
+[8mha:////4LDHJxk5PCBRZISTpw6ab9DZVeatmw2qiDZ0IhomswYTAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] Some problems were encountered while building the effective model for com.wakaleo.gameoflife:gameoflife-build:jar:1.0-SNAPSHOT
+[8mha:////4LDHJxk5PCBRZISTpw6ab9DZVeatmw2qiDZ0IhomswYTAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] Reporting configuration should be done in <reporting> section, not in maven-site-plugin <configuration> as reportPlugins parameter.
+[8mha:////4LDHJxk5PCBRZISTpw6ab9DZVeatmw2qiDZ0IhomswYTAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] 
+[8mha:////4LDHJxk5PCBRZISTpw6ab9DZVeatmw2qiDZ0IhomswYTAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] Some problems were encountered while building the effective model for com.wakaleo.gameoflife:gameoflife-core:jar:1.0-SNAPSHOT
+[8mha:////4LDHJxk5PCBRZISTpw6ab9DZVeatmw2qiDZ0IhomswYTAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] Reporting configuration should be done in <reporting> section, not in maven-site-plugin <configuration> as reportPlugins parameter.
+[8mha:////4LDHJxk5PCBRZISTpw6ab9DZVeatmw2qiDZ0IhomswYTAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] 
+[8mha:////4LDHJxk5PCBRZISTpw6ab9DZVeatmw2qiDZ0IhomswYTAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] Some problems were encountered while building the effective model for com.wakaleo.gameoflife:gameoflife-web:war:1.0-SNAPSHOT
+[8mha:////4LDHJxk5PCBRZISTpw6ab9DZVeatmw2qiDZ0IhomswYTAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] Reporting configuration should be done in <reporting> section, not in maven-site-plugin <configuration> as reportPlugins parameter.
+[8mha:////4LDHJxk5PCBRZISTpw6ab9DZVeatmw2qiDZ0IhomswYTAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] 
+[8mha:////4LDHJxk5PCBRZISTpw6ab9DZVeatmw2qiDZ0IhomswYTAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] Some problems were encountered while building the effective model for com.wakaleo.gameoflife:gameoflife:pom:1.0-SNAPSHOT
+[8mha:////4LDHJxk5PCBRZISTpw6ab9DZVeatmw2qiDZ0IhomswYTAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] Reporting configuration should be done in <reporting> section, not in maven-site-plugin <configuration> as reportPlugins parameter. @ line 302, column 40
+[8mha:////4LDHJxk5PCBRZISTpw6ab9DZVeatmw2qiDZ0IhomswYTAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] 
+[8mha:////4LDHJxk5PCBRZISTpw6ab9DZVeatmw2qiDZ0IhomswYTAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[8mha:////4LDHJxk5PCBRZISTpw6ab9DZVeatmw2qiDZ0IhomswYTAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] 
+[8mha:////4LDHJxk5PCBRZISTpw6ab9DZVeatmw2qiDZ0IhomswYTAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[8mha:////4LDHJxk5PCBRZISTpw6ab9DZVeatmw2qiDZ0IhomswYTAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] gameoflife                                                         [pom]
+[INFO] gameoflife-build                                                   [jar]
+[INFO] gameoflife-core                                                    [jar]
+[INFO] gameoflife-web                                                     [war]
+[INFO] 
+[INFO] -----------------< com.wakaleo.gameoflife:gameoflife >------------------
+[INFO] Building gameoflife 1.0-SNAPSHOT                                   [1/4]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[8mha:////4KCofvpzJ2MsHI7o8TykokDAUiljaDMcNOGlg+tmkSngAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ gameoflife ---
+[INFO] Deleting C:\Program Files (x86)\Jenkins\workspace\game-of-life-default\target
+[INFO] 
+[8mha:////4KCofvpzJ2MsHI7o8TykokDAUiljaDMcNOGlg+tmkSngAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-versions) @ gameoflife ---
+[INFO] 
+[8mha:////4KCofvpzJ2MsHI7o8TykokDAUiljaDMcNOGlg+tmkSngAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- jacoco-maven-plugin:0.7.2.201409121644:prepare-agent (jacoco-initialize) @ gameoflife ---
+[INFO] argLine set to "-javaagent:C:\\Windows\\system32\\config\\systemprofile\\.m2\\repository\\org\\jacoco\\org.jacoco.agent\\0.7.2.201409121644\\org.jacoco.agent-0.7.2.201409121644-runtime.jar=destfile=C:\\Program Files (x86)\\Jenkins\\workspace\\game-of-life-default\\target\\jacoco.exec"
+[INFO] 
+[8mha:////4KCofvpzJ2MsHI7o8TykokDAUiljaDMcNOGlg+tmkSngAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-surefire-plugin:2.11:test (unit-tests) @ gameoflife ---
+[INFO] No tests to run.
+[INFO] Surefire report directory: C:\Program Files (x86)\Jenkins\workspace\game-of-life-default\target\surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+
+Results :
+
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] 
+[8mha:////4KCofvpzJ2MsHI7o8TykokDAUiljaDMcNOGlg+tmkSngAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-easyb-plugin:1.4:test (default) @ gameoflife ---
+[INFO] C:\Program Files (x86)\Jenkins\workspace\game-of-life-default\src\test\stories does not exists.  Skipping easyb testing
+[INFO] 
+[INFO] --------------< com.wakaleo.gameoflife:gameoflife-build >---------------
+[INFO] Building gameoflife-build 1.0-SNAPSHOT                             [2/4]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[8mha:////4KCofvpzJ2MsHI7o8TykokDAUiljaDMcNOGlg+tmkSngAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ gameoflife-build ---
+[INFO] Deleting C:\Program Files (x86)\Jenkins\workspace\game-of-life-default\gameoflife-build\target
+[INFO] 
+[8mha:////4KCofvpzJ2MsHI7o8TykokDAUiljaDMcNOGlg+tmkSngAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-versions) @ gameoflife-build ---
+[INFO] 
+[8mha:////4KCofvpzJ2MsHI7o8TykokDAUiljaDMcNOGlg+tmkSngAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ gameoflife-build ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] 
+[8mha:////4KCofvpzJ2MsHI7o8TykokDAUiljaDMcNOGlg+tmkSngAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- jacoco-maven-plugin:0.7.2.201409121644:prepare-agent (jacoco-initialize) @ gameoflife-build ---
+[INFO] argLine set to "-javaagent:C:\\Windows\\system32\\config\\systemprofile\\.m2\\repository\\org\\jacoco\\org.jacoco.agent\\0.7.2.201409121644\\org.jacoco.agent-0.7.2.201409121644-runtime.jar=destfile=C:\\Program Files (x86)\\Jenkins\\workspace\\game-of-life-default\\gameoflife-build\\target\\jacoco.exec"
+[INFO] 
+[8mha:////4KCofvpzJ2MsHI7o8TykokDAUiljaDMcNOGlg+tmkSngAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ gameoflife-build ---
+[INFO] No sources to compile
+[INFO] 
+[8mha:////4KCofvpzJ2MsHI7o8TykokDAUiljaDMcNOGlg+tmkSngAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ gameoflife-build ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory C:\Program Files (x86)\Jenkins\workspace\game-of-life-default\gameoflife-build\src\test\resources
+[INFO] 
+[8mha:////4KCofvpzJ2MsHI7o8TykokDAUiljaDMcNOGlg+tmkSngAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ gameoflife-build ---
+[INFO] No sources to compile
+[INFO] 
+[8mha:////4KCofvpzJ2MsHI7o8TykokDAUiljaDMcNOGlg+tmkSngAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-surefire-plugin:2.11:test (default-test) @ gameoflife-build ---
+[INFO] Tests are skipped.
+[INFO] 
+[8mha:////4KCofvpzJ2MsHI7o8TykokDAUiljaDMcNOGlg+tmkSngAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-surefire-plugin:2.11:test (unit-tests) @ gameoflife-build ---
+[INFO] No tests to run.
+[INFO] Surefire report directory: C:\Program Files (x86)\Jenkins\workspace\game-of-life-default\gameoflife-build\target\surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+
+Results :
+
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] 
+[8mha:////4KCofvpzJ2MsHI7o8TykokDAUiljaDMcNOGlg+tmkSngAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-easyb-plugin:1.4:test (default) @ gameoflife-build ---
+[INFO] C:\Program Files (x86)\Jenkins\workspace\game-of-life-default\gameoflife-build\src\test\stories does not exists.  Skipping easyb testing
+[INFO] 
+[8mha:////4KCofvpzJ2MsHI7o8TykokDAUiljaDMcNOGlg+tmkSngAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ gameoflife-build ---
+[INFO] Building jar: C:\Program Files (x86)\Jenkins\workspace\game-of-life-default\gameoflife-build\target\gameoflife-build-1.0-SNAPSHOT.jar
+[INFO] 
+[INFO] ---------------< com.wakaleo.gameoflife:gameoflife-core >---------------
+[INFO] Building gameoflife-core 1.0-SNAPSHOT                              [3/4]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[8mha:////4KCofvpzJ2MsHI7o8TykokDAUiljaDMcNOGlg+tmkSngAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ gameoflife-core ---
+[INFO] Deleting C:\Program Files (x86)\Jenkins\workspace\game-of-life-default\gameoflife-core\target
+[INFO] 
+[8mha:////4KCofvpzJ2MsHI7o8TykokDAUiljaDMcNOGlg+tmkSngAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-versions) @ gameoflife-core ---
+[INFO] 
+[8mha:////4KCofvpzJ2MsHI7o8TykokDAUiljaDMcNOGlg+tmkSngAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ gameoflife-core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory C:\Program Files (x86)\Jenkins\workspace\game-of-life-default\gameoflife-core\src\main\resources
+[INFO] 
+[8mha:////4KCofvpzJ2MsHI7o8TykokDAUiljaDMcNOGlg+tmkSngAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- jacoco-maven-plugin:0.7.2.201409121644:prepare-agent (jacoco-initialize) @ gameoflife-core ---
+[INFO] argLine set to "-javaagent:C:\\Windows\\system32\\config\\systemprofile\\.m2\\repository\\org\\jacoco\\org.jacoco.agent\\0.7.2.201409121644\\org.jacoco.agent-0.7.2.201409121644-runtime.jar=destfile=C:\\Program Files (x86)\\Jenkins\\workspace\\game-of-life-default\\gameoflife-core\\target\\jacoco.exec"
+[INFO] 
+[8mha:////4KCofvpzJ2MsHI7o8TykokDAUiljaDMcNOGlg+tmkSngAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ gameoflife-core ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 5 source files to C:\Program Files (x86)\Jenkins\workspace\game-of-life-default\gameoflife-core\target\classes
+[INFO] 
+[8mha:////4KCofvpzJ2MsHI7o8TykokDAUiljaDMcNOGlg+tmkSngAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ gameoflife-core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory C:\Program Files (x86)\Jenkins\workspace\game-of-life-default\gameoflife-core\src\test\resources
+[INFO] 
+[8mha:////4KCofvpzJ2MsHI7o8TykokDAUiljaDMcNOGlg+tmkSngAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ gameoflife-core ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 10 source files to C:\Program Files (x86)\Jenkins\workspace\game-of-life-default\gameoflife-core\target\test-classes
+[INFO] 
+[8mha:////4KCofvpzJ2MsHI7o8TykokDAUiljaDMcNOGlg+tmkSngAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-surefire-plugin:2.11:test (default-test) @ gameoflife-core ---
+[INFO] Tests are skipped.
+[INFO] 
+[8mha:////4KCofvpzJ2MsHI7o8TykokDAUiljaDMcNOGlg+tmkSngAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-surefire-plugin:2.11:test (unit-tests) @ gameoflife-core ---
+[INFO] Surefire report directory: C:\Program Files (x86)\Jenkins\workspace\game-of-life-default\gameoflife-core\target\surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.wakaleo.gameoflife.domain.WhenYouCreateACell
+Tests run: 6, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 0.108 sec <<< FAILURE!
+Running com.wakaleo.gameoflife.domain.WhenYouCreateAGrid
+Tests run: 16, Failures: 0, Errors: 14, Skipped: 0, Time elapsed: 0.021 sec <<< FAILURE!
+Running com.wakaleo.gameoflife.domain.WhenYouCreateANewUniverse
+Tests run: 11, Failures: 1, Errors: 7, Skipped: 0, Time elapsed: 0.006 sec <<< FAILURE!
+Running com.wakaleo.gameoflife.domain.WhenYouPlayTheGameOfLife
+Tests run: 5, Failures: 0, Errors: 3, Skipped: 0, Time elapsed: 0.001 sec <<< FAILURE!
+Running com.wakaleo.gameoflife.domain.WhenYouPrintAGrid
+Tests run: 3, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0 sec <<< FAILURE!
+Running com.wakaleo.gameoflife.domain.WhenYouReadAGridFromAString
+Tests run: 8, Failures: 0, Errors: 5, Skipped: 0, Time elapsed: 0.002 sec <<< FAILURE!
+
+Results :
+
+Failed tests:   aLiveCellShouldBePrintedAsAnAsterisk(com.wakaleo.gameoflife.domain.WhenYouCreateACell): (..)
+  aLiveCellSymbolShouldBeAnAsterisk(com.wakaleo.gameoflife.domain.WhenYouCreateACell): (..)
+  aLiveCellShouldBeRepresentedByAnAsterisk(com.wakaleo.gameoflife.domain.WhenYouCreateACell): (..)
+  aUserCanAssignALiveCellAtAGivenPointInTheGrid(com.wakaleo.gameoflife.domain.WhenYouCreateANewUniverse): (..)
+  shouldBeAbleToReadAStringGridContainingLiveAndDeadCells(com.wakaleo.gameoflife.domain.WhenYouPrintAGrid): (..)
+  shouldBeAbleToReadALargeStringGridContainingLiveAndDeadCells(com.wakaleo.gameoflife.domain.WhenYouPrintAGrid): (..)
+
+Tests in error: 
+  shouldBeAbleToCountLiveNeighboursOfACell(com.wakaleo.gameoflife.domain.WhenYouCreateAGrid)
+  shouldBeAbleToReadTheStateOfADeadCell(com.wakaleo.gameoflife.domain.WhenYouCreateAGrid)
+  theGridContentsAsAnArrayShouldBeTheCorrectSize(com.wakaleo.gameoflife.domain.WhenYouCreateAGrid)
+  shouldBeAbleToSeedAGridWithANonEmptyString(com.wakaleo.gameoflife.domain.WhenYouCreateAGrid)
+  shouldBeAbleToReadTheWidthOfTheGrid(com.wakaleo.gameoflife.domain.WhenYouCreateAGrid)
+  shouldBeAbleToCountLiveNeighboursOfACellOnBoundaries(com.wakaleo.gameoflife.domain.WhenYouCreateAGrid)
+  ModifyingTheGridContentsAsAnArrayShouldNotModifyTheOriginalContents(com.wakaleo.gameoflife.domain.WhenYouCreateAGrid)
+  shouldNotCountTheTargetCellAsANeighbour(com.wakaleo.gameoflife.domain.WhenYouCreateAGrid)
+  shouldBeAbleToReadTheStateOfALivingCell(com.wakaleo.gameoflife.domain.WhenYouCreateAGrid)
+  shouldBeAbleToReadTheHeightOfTheGrid(com.wakaleo.gameoflife.domain.WhenYouCreateAGrid)
+  shouldBeAbleToCountLiveNeighboursOfACellInTheMiddleOfTheGrid(com.wakaleo.gameoflife.domain.WhenYouCreateAGrid)
+  shouldBeAbleToCountLiveNeighboursOfACellOnDiagonalsAndStraightLines(com.wakaleo.gameoflife.domain.WhenYouCreateAGrid)
+  shouldBeAbleToObtainTheGridContentsAsAnArray(com.wakaleo.gameoflife.domain.WhenYouCreateAGrid)
+  shouldBeAbleToCountLiveNeighboursOfACellOnAnotherLine(com.wakaleo.gameoflife.domain.WhenYouCreateAGrid)
+  aUserCanReadADeadCellValueAtAGivenPointInTheGrid(com.wakaleo.gameoflife.domain.WhenYouCreateANewUniverse)
+  aUserCanObtainTheGridContentsAsAnArrayOfCells(com.wakaleo.gameoflife.domain.WhenYouCreateANewUniverse)
+  aUserCanReadALiveCellValueAtAGivenPointInTheGrid(com.wakaleo.gameoflife.domain.WhenYouCreateANewUniverse)
+  aUserCanAssignADeadCellAtAGivenPointInTheGrid(com.wakaleo.gameoflife.domain.WhenYouCreateANewUniverse)
+  aUniverseSeededWithAGridContainingASingleLiveCellContentWillSpawnAnEmptyGrid(com.wakaleo.gameoflife.domain.WhenYouCreateANewUniverse)
+  aUniverseSeededWithAGridWithLivingCellsContentWillContainThatGrid(com.wakaleo.gameoflife.domain.WhenYouCreateANewUniverse)
+  aUniverseSpawnsANewGridInTheNextGeneration(com.wakaleo.gameoflife.domain.WhenYouCreateANewUniverse)
+  liveCellaWith2or3iveNeighbourShouldRemainAliveInTheNextGeneration(com.wakaleo.gameoflife.domain.WhenYouPlayTheGameOfLife)
+  aDeadCellWithOneLiveNeighbourShouldRemainDeadInTheNextGeneration(com.wakaleo.gameoflife.domain.WhenYouPlayTheGameOfLife)
+  aLiveCellWithExactlyTwoLiveNeighbourShouldRemainAliveInTheNextGeneration(com.wakaleo.gameoflife.domain.WhenYouPlayTheGameOfLife)
+  shouldBeAbleToReadAGridContainingLiveAndDeadCells(com.wakaleo.gameoflife.domain.WhenYouReadAGridFromAString)
+  shouldBeAbleToReadAnAsymetricalGridContainingLiveAndDeadCells(com.wakaleo.gameoflife.domain.WhenYouReadAGridFromAString)
+  shouldBeAbleToReadAVeryLargerGrid(com.wakaleo.gameoflife.domain.WhenYouReadAGridFromAString)
+  shouldBeAbleToReadALargerGrid(com.wakaleo.gameoflife.domain.WhenYouReadAGridFromAString)
+  shouldBeAbleToReadAGridContainingASingleCellFromAString(com.wakaleo.gameoflife.domain.WhenYouReadAGridFromAString)
+
+Tests run: 49, Failures: 6, Errors: 29, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] gameoflife 1.0-SNAPSHOT ............................ SUCCESS [  1.409 s]
+[INFO] gameoflife-build ................................... SUCCESS [  0.756 s]
+[INFO] gameoflife-core .................................... FAILURE [  1.133 s]
+[INFO] gameoflife-web 1.0-SNAPSHOT ........................ SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 3.527 s
+[INFO] Finished at: 2018-07-11T17:20:22+08:00
+[INFO] ------------------------------------------------------------------------
+[8mha:////4OlZBpiCgMaOzk5HSR3WYCxOlFKm+DI7q3fOVqg9cIw6AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55ZekOlc7RKnPKH7IxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAACsNFCqYAAAAA==[0m[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.11:test (unit-tests) on project gameoflife-core: There are test failures.
+[8mha:////4OlZBpiCgMaOzk5HSR3WYCxOlFKm+DI7q3fOVqg9cIw6AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55ZekOlc7RKnPKH7IxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAACsNFCqYAAAAA==[0m[ERROR] 
+[8mha:////4OlZBpiCgMaOzk5HSR3WYCxOlFKm+DI7q3fOVqg9cIw6AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55ZekOlc7RKnPKH7IxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAACsNFCqYAAAAA==[0m[ERROR] Please refer to C:\Program Files (x86)\Jenkins\workspace\game-of-life-default\gameoflife-core\target\surefire-reports for the individual test results.
+[8mha:////4OlZBpiCgMaOzk5HSR3WYCxOlFKm+DI7q3fOVqg9cIw6AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55ZekOlc7RKnPKH7IxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAACsNFCqYAAAAA==[0m[ERROR] -> [Help 1]
+[8mha:////4OlZBpiCgMaOzk5HSR3WYCxOlFKm+DI7q3fOVqg9cIw6AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55ZekOlc7RKnPKH7IxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAACsNFCqYAAAAA==[0m[ERROR] 
+[8mha:////4OlZBpiCgMaOzk5HSR3WYCxOlFKm+DI7q3fOVqg9cIw6AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55ZekOlc7RKnPKH7IxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAACsNFCqYAAAAA==[0m[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[8mha:////4OlZBpiCgMaOzk5HSR3WYCxOlFKm+DI7q3fOVqg9cIw6AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55ZekOlc7RKnPKH7IxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAACsNFCqYAAAAA==[0m[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[8mha:////4OlZBpiCgMaOzk5HSR3WYCxOlFKm+DI7q3fOVqg9cIw6AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55ZekOlc7RKnPKH7IxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAACsNFCqYAAAAA==[0m[ERROR] 
+[8mha:////4OlZBpiCgMaOzk5HSR3WYCxOlFKm+DI7q3fOVqg9cIw6AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55ZekOlc7RKnPKH7IxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAACsNFCqYAAAAA==[0m[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[8mha:////4OlZBpiCgMaOzk5HSR3WYCxOlFKm+DI7q3fOVqg9cIw6AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55ZekOlc7RKnPKH7IxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAACsNFCqYAAAAA==[0m[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[8mha:////4OlZBpiCgMaOzk5HSR3WYCxOlFKm+DI7q3fOVqg9cIw6AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55ZekOlc7RKnPKH7IxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAACsNFCqYAAAAA==[0m[ERROR] 
+[8mha:////4OlZBpiCgMaOzk5HSR3WYCxOlFKm+DI7q3fOVqg9cIw6AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55ZekOlc7RKnPKH7IxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAACsNFCqYAAAAA==[0m[ERROR] After correcting the problems, you can resume the build with the command
+[8mha:////4OlZBpiCgMaOzk5HSR3WYCxOlFKm+DI7q3fOVqg9cIw6AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55ZekOlc7RKnPKH7IxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAACsNFCqYAAAAA==[0m[ERROR]   mvn <goals> -rf :gameoflife-core
+Build step 'µ÷ÓÃ¶¥²ã Maven Ä¿±ê' marked build as failure
+Recording test results
+¹éµµ³ÉÆ·
+Finished: FAILURE

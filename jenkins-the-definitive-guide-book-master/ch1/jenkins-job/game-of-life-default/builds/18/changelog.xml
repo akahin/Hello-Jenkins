@@ -1,0 +1,12 @@
+commit 27592f990170529964fad0039a98f2842f3f8e47
+tree fcf457f77bec5159047f463ba9c9c2d9fc2b7602
+parent d4e03f28a7ccfeca4dcf21006a6ff199329ed979
+author leo <942510346@qq.com> 2018-07-11 17:06:18 +0800
+committer leo <942510346@qq.com> 2018-07-11 17:06:18 +0800
+
+    Changes stars to pluses
+
+    Signed-off-by: leo <942510346@qq.com>
+
+
+:100644 100644 ae8cd3cb3f8299836da932c198b4755f863b9d3b 1bc2b7714928663dcfcba371b1df7e2780a1a204 M	gameoflife-core/src/main/java/com/wakaleo/gameoflife/domain/Cell.java

@@ -1,0 +1,19 @@
+ÓÉÓÃ»§ [8mha:////4HGTHtvRq607dnH/0sBOb0U/W9hN/F3A3Qe4i1Bhld3bAAAAlR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzmEgZO/dLi1CL9nNR8AN+cqRS+AAAA[0mleo Æô¶¯
+¹¹½¨ÖÐ ÔÚ¹¤×÷¿Õ¼ä C:\Program Files (x86)\Jenkins\workspace\game-of-life-default ÖÐ
+ > git.exe rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git.exe config remote.origin.url https://github.com/Joyounger/game-of-life.git # timeout=10
+Fetching upstream changes from https://github.com/Joyounger/game-of-life.git
+ > git.exe --version # timeout=10
+ > git.exe fetch --tags --progress https://github.com/Joyounger/game-of-life.git +refs/heads/*:refs/remotes/origin/*
+ > git.exe rev-parse "refs/remotes/origin/master^{commit}" # timeout=10
+ > git.exe rev-parse "refs/remotes/origin/origin/master^{commit}" # timeout=10
+Checking out Revision d4e03f28a7ccfeca4dcf21006a6ff199329ed979 (refs/remotes/origin/master)
+ > git.exe config core.sparsecheckout # timeout=10
+ > git.exe checkout -f d4e03f28a7ccfeca4dcf21006a6ff199329ed979
+Commit message: "Updated dependencies"
+ > git.exe rev-list --no-walk d4e03f28a7ccfeca4dcf21006a6ff199329ed979 # timeout=10
+[game-of-life-default] $ sh -xe C:\Windows\TEMP\jenkins7868876683671801682.sh
++ git --version
+git version 2.16.2
+Finished: SUCCESS

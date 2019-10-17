@@ -1,0 +1,173 @@
+
+##### 创建自由式构建
+自由式构建是最灵活的任务,可用于任何类型的项目,配置相对简单.
+
+
+###### General下的设置
+如果在`General`中设置了`Discard old builds`,则在每次构建的详细页单击`keep this build forever`,可以告诉Jenkins永远保留这个构建
+Jenkins永远不会删除最后一个稳定和成功的构建.例如如果限制Jenkins只保留最后20个构建,且上一个成功的构建是30个之前,则Jenkins会继续保留成功的构建作业以及最后20个失败的构建.
+
+`Quiet period`
+主要用来支持原子提交的版本系统,如CVS,有时也用在开发人员有多次小的提交代码习惯的团队
+When this option is checked, newly triggered builds of this project will be added to the queue, but Jenkins will wait for the specified period of time before actually starting the build.
+For example, if your builds take a long time to execute, you may want to prevent multiple source control commits that are made at approximately the same time from triggering multiple builds. Enabling the quiet period would prevent a build from being started as soon as Jenkins discovers the first commit; this would give the developer the chance to push more commits which would be included in the build when it starts. This reduces the size of the queue, meaning that developers would get feedback faster for their series of commits, and the load on the Jenkins system would be reduced.
+
+If a new build of this project is triggered while a build is already sitting in the queue, waiting for its quiet period to end, the quiet period will not be reset. The newly triggered build will not be added to the queue, unless this project is parameterized and the build has different parameters to the build already in the queue.
+
+If this option is not checked, then the system-wide default value from the Configure System screen will be used.
+
+
+`Block build when upstream project is building`
+When this option is checked, Jenkins will prevent the project from building when a dependency of this project is in the queue, or building. The dependencies include the direct as well as the transitive dependencies.
+当几个相关的项目受到单个提交影响,并且必须以特定顺序构建时会用到.如果启用此选项,Jenkins会在开始此构建之前一直等到任何上游的构建作业完成.
+
+`Use custom workspace`
+For each job on Jenkins, Jenkins allocates a unique "workspace directory." This is the directory where the code is checked out and builds happen. Normally you should let Jenkins allocate and clean up workspace directories, but in several situations this is problematic, and in such case, this option lets you specify the workspace location manually.
+One such situation is where paths are hard-coded and the code needs to be built on a specific location. While there's no doubt that such a build is not ideal, this option allows you to get going in such a situation.
+
+Another situation where this is useful is when you are using the project type not to perform a software build, but execution of a certain batch task, perhaps as a cron replacement. In such case, you can use this option to map the relevant directory as the workspace, so that people can look at files through the Jenkins web UI, and you can kick relevant commands more easily.
+
+If you are in a distributed build environment, unless you tie a job to a specific node, Jenkins may still move around jobs to different slaves. Sometimes this is desirable, sometimes this is not. Also, you can map multiple projects to have the same workspace, but if you do so, make sure concurrent executions of those jobs won't have nasty interference with each other.
+
+If this path is relative, it's resolved against the "remote FS root" directory of the slave, or $JENKINS_HOME on the master.
+有时想让几个构建项目先后在同一个目录中工作可以使用此选项.
+
+
+###### Source Code Management选`Git`后的设置项
+`Check out to specidic local branch`
+If given, checkout the revision to build as HEAD on this branch.
+If selected, and its value is an empty string or "**", then the branch name is computed from the remote branch without the origin. In that case, a remote branch origin/master will be checked out to a local branch named master, and a remote branch origin/develop/new-feature will be checked out to a local branch named develop/newfeature.
+Please note that this has not been tested with submodules.
+从指定的树创建一个本地分支,而不是只使用提交的哈希直接分离出的HEAD检出
+`Merge before build`
+These options allow you to perform a merge to a particular branch before building. For example, you could specify an integration branch to be built, and to merge to master. In this scenario, on every change of integration, Jenkins will perform a merge with the master branch, and try to perform a build if the merge is successful. It then may push the merge back to the remote repository if the Git Push post-build action is selected.
+使用此选项的典型情况是将一个集成分支合并到类似于主分支(master)上.只要没有冲突的情况才会自动合并,需要人为修改的合并将导致构建失败
+除非启用了构建后push行为,否则由此产生的合并分支不会被自动push到另一个仓库中.
+`clean after checkout`
+Clean up the workspace after every checkout by deleting all untracked files and directories, including those which are specified in .gitignore. It also resets all tracked files to their versioned state. This ensures that the workspace is in the same state as if you cloned and checked out in a brand-new empty directory, and ensures that your build is not affected by the files generated by the previous build.
+`use commit author in changelog`
+The default behavior is to use the Git commit's "Committer" value in Jenkins' build changesets. If this option is selected, the Git commit's "Author" value would be used instead.
+Using this behaviour will preclude the faster git ls-remote polling mechanism, forcing polling to require a workspace thus sometimes triggering unwanted builds, as if you had selected the Force polling using workspace extension as well.
+`wipe out repository & force clone`
+Delete the contents of the workspace before building, ensuring a fully fresh workspace.
+"clean after checkout"只清理未跟踪的文件.如果希望拥有完全干净的工作空间,可以使用"wipe out repository & force clone".
+`Repository browser`
+Adds links in "changes" views within Jenkins to an external system for browsing the details of those changes. The "Auto" selection attempts to infer the repository browser from other jobs, if supported by the SCM and a job with matching SCM details can be found.
+git有几个你能够使用的源代码浏览器,最常见的是gitorious, gitweb或者github.如果提供了相应的仓库浏览器的URL,Jenkins会显示出能够触发构建的源代码更改链接.
+
+
+###### Build Trigger
+在每次构建的详情页,可在页面左侧导航栏找到轮训日志"Polling Log",它提供了关于仓库最后一次被轮训的时间的信息,还可能提供一个记录了更改的列表.
+在安装gerrit builder trigger时添加gerrit event选项比简单轮训仓库更加有效和精确.
+gerrit trigger是一个Jenkins插件,当在git仓库用户指定的项目发生任何特定的用户活动时,能触发Jenkins代码构建.它可用于替代更加常用的build periodically或poll SCM
+
+
+
+一个自由式构建任务中,有3种基本方式可以触发构建作业:
+* Build after other projects are built:一旦另一个构建完成后触发一个构建
+* Build periodically:定期开始构建
+* Poll SCM:SCM轮训更改
+* Trigger builds remotely:远程触发构建
+1 Build after other projects are built:
+Set up a trigger so that when some other projects finish building, a new build is scheduled for this project. This is convenient for running an extensive test after a build is complete, for example.
+This configuration complements the "Build other projects" section in the "Post-build Actions" of an upstream project, but is preferable when you want to configure the downstream project.
+支持被多个任务构建完成后触发, 这时多个任务名之间用逗号分隔
+前一个构建作业的"post-build"行为部分有个对应的字段,叫作"build other projects".当修改"Build after other projects are built"字段时,该字段会在相应的构建作业中被自动更新.然而不想"build after other projects are built"字段,即使构建不稳定,这个字段也会触发构建,这是非常有用的.
+2 Build periodically
+Provides a cron-like(http://en.wikipedia.org/wiki/cron) feature to periodically execute this project.
+This feature is primarily for using Jenkins as a cron replacement, and it is not ideal for continuously building software projects. When people first start continuous integration, they are often so used to the idea of regularly scheduled builds like nightly/weekly that they use this feature. However, the point of continuous integration is to start a build as soon as a change is made, to provide a quick feedback to the change. To do that you need to hook up SCM change notification to Jenkins(https://jenkins.io/redirect/scm-change-trigger).
+So, before using this feature, stop and ask yourself if this is really what you want.
+3 Poll SCM:
+Configure Jenkins to poll changes in SCM.
+Note that this is going to be an expensive operation for CVS, as every polling requires Jenkins to scan the entire workspace and verify it with the server. Consider setting up a "push" trigger to avoid this overhead, as described in this document
+Jenkins定期查询版本控制系统是否提交了更改,如果有就触发构建,这种方法对于小型项目往往是适用的.如果有大量的构建作业就有其局限性了,因为这会导致scm服务器配置和网络查询饱和(即使许多是不必要的).这种情况下最好设定更加精确的方法,仅当SCM收到变化时才会触发构建.
+很多项目中如果更新频繁提交到版本控制系统,这可能会导致许多构建作业进行排队,反过来导致反馈时间延长.通过降低轮训频率,可以减少构建队列,但代价是较不精确的反馈.
+如果使用CVS,轮询并不是一个好选择,因为CVS检查项目中的更改时会一个个的检查文件,这是一个缓慢和繁琐的过程.最好的解决方案是迁移到现代的版本控制系统如Git或者Subversion.
+4 Trigger builds remotely (e.g., from scripts)
+Enable this option if you would like to trigger new builds by accessing a special predefined URL (convenient for scripts).
+One typical example for this feature would be to trigger new build from the source control system's hook script, when somebody has just committed a change into the repository, or from a script that parses your source control email notifications.
+You'll need to provide an authorization token in the form of a string so that only those who know it would be able to remotely trigger this project's builds.
+对于大项目,轮询浪费网络资源,并且在提交更改和开始构建之前总有小的延迟.更加精确的策略是任何时候提交更改时,让SCM系统触发Jenkins构建.
+从远程启动Jenkins构建作业的方法:假设Jenkins服务器运行在http://myserver:8080/jenkins
+wget http://myserver:8080/jenkins/job/projectname/build
+技巧就是每当更改被提交时,让版本控制器做这个.如何做到这一点的细节对于每个版本控制系统不同.
+
+最后,如果只是手动构建,则build trigger部分为空不用配
+
+
+###### Post-build Actions
+Git Publisher:Optionally push merge results, tags, and/or branches to remote repositories.
+`Git Publisher`的设置项
+1 Push Only If Build Succeeds:Only push to remotes if the build succeeds - otherwise, nothing will be pushed.
+如果在Jenkins构建过程中,合并或其他产生提交的行为已经发生变化了,就可以推到远程.
+2 Merge Results:Push merges back to the origin specified in the pre-build merge options.
+如果配置了预构建的合并,则将合并结果的分支推送到它的起源
+3 Tags:Specify tags to push at the completion of the build.
+If the "Create Tag" or "Update tag" option is selected, the tag will be created or updated and pushed at the completion of the build, and the push will fail if a tag with the given name already exists. If the "Create Tag" option is not selected, the push will fail if the tag does not already exist.
+Environment variables may be used in the tag name - they will be replaced at build time.
+The repository name needs to be one of the repositories configured in the SCM section above.
+标签名字中可以嵌套环境变量,如HUDSON_BUILD_$PPID,甚至是由Jenkins插件如$HUDSON_AUTOTAG_$BUILDNUM提供的构建版本号
+4 Branches: Branches to push to remote repositories
+Specify remote branches to push the current HEAD to, as of the completion of the build.
+The branch name above is the name of the remote branch.
+Environment variables may be used in the branch name - they will be replaced at build time.
+The repository name needs to be one of the repositories configured in the SCM section above.
+远程分支的名字根据插件以前的配置进行验证,如果远程分支不存在则显示警告.
+
+GitHub插件
+1 提供了到项目github主页的可选链接
+2 提供了每个文件的更改链接,在一个作业的`Source Code Management`配置里的repository browser部分可以找到.
+
+
+
+###### Maven构建步骤
+从build中选"invoke top-level maven targets",选择要运行的maven版本,然后输入想运行的maven目标即可.
+Jenkins自由构建对maven 2和maven 3都支持很好
+
+###### 执行shell或win批处理脚本
+Jenkins使用 -ex执行shell脚本,-x控制台中会输出命令,-e如果任何执行的命令返回非零值,构建将会失败.
+应该在构建作业中尽量避免使用系统级别的脚本,更好的方案是使用移植性更好的脚本语言如groovy或gant执行操作系统脚本
+
+
+可以用在几乎任何构建步骤中的一个技巧,就是使用Jenkins环境变量
+
+###### 运行groovy脚本
+groovy不仅是一种流行的动态语言,它也是一个方便的低级脚本语言.
+Jenkins groovy插件()允许运行任意的groovy命令,或者作为构建过程的一部分调用groovy脚本.
+安装这个插件后,再在`Global Tool Configuration`中设置好groovy,然后就可以在构建任务中设置groovy脚本了.
+在任务设置的build下选择`Executes groovy script`或者`Executes system groovy script.`
+"Executes groovy script"将在一个单独的jvm中执行groovy脚本
+"Executes system groovy script"在Jenkins自己的jvm运行groovy脚本,能完全访问Jenkins内部.主要用来操纵Jenkins构建作业或者构建过程本身.
+一个groovy构建可以采用两种形式之一:简单的任务可以添加一小段groovy.
+对于更复杂的情况,可能会写groovy脚本,并将其放在版本控制之下.然后选择'groovy script file'并设置脚本路径(相对于工作空间)来运行它.
+
+
+##### Post-build Actions
+`publish Junit test result report` 报告测试结果
+Jenkins understands the JUnit test report XML format (which is also used by TestNG). When this option is configured, Jenkins can provide useful information about test results, such as historical test result trends, a web UI for viewing test reports, tracking failures, and so on.
+To use this feature, first set up your build to run tests, then specify the path to JUnit XML files in the Ant glob syntax, such as **/build/test-reports/*.xml. Be sure not to include any non-report files into this pattern. You can specify multiple patterns of files separated by commas.
+
+Once there are a few builds running with test results, you should start seeing something like this.
+
+`archive the artifacts` 归档构建产物
+Archives the build artifacts (for example, distribution zip files or jar files) so that they can be downloaded later. Archived files will be accessible from the Jenkins webpage. 
+Normally, Jenkins keeps artifacts for a build as long as a build log itself is kept, but if you don't need old artifacts and would rather save disk space, you can do so.
+
+Note that the Maven job type automatically archives any produced Maven artifacts. Any artifacts configured here will be archived on top of that. Automatic artifact archiving can be disabled under the advanced Maven options.
+在"files to archive"字段,可以提供要归档(相对于作业工作空间)文件的完整路径,或者使用类似Ant的通配符(如**/*.jar,在工作空间任何地方的所有jar文件)
+
+一个稳定的构建总是成功的,但一个成功的构建不一定稳定
+已完成的构建只是构建完成而无论结果如何.不论构建的产物是什么,归档的步骤一定发生
+
+构建产物URL的格式:
+最新的稳定构建 <server-url>/job/<build-job>/lastStableBuild/artifact/<path-to-artifact>
+最新的成功构建 <server-url>/job/<build-job>/lastSuccessfulBuild/artifact/<path-to-artifact>
+最新完成的构建 <server-url>/job/<build-job>/lastCompletedBuild/artifact/<path-to-artifact>
+
+
+`email notifacation`
+Jenkins对电子邮件通知提供了开箱即用的支持.还可以选择发生单独的电子邮件给破坏构建的用户.要使这个生效,需要在Jenkins服务器上激活了安全.
+通常情况下,只要构建失败,Jenkins就会发送电子邮件通知.当构建第一次变的不稳定时,它也会发出通知.除非明确配置,否则Jenkins不会为每次不稳定构建发送邮件,而仅会发送第一个不稳定的构建.
+
+
+

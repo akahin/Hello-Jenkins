@@ -1,0 +1,25 @@
+由 SCM 变更启动
+构建中 在工作空间 C:\Program Files (x86)\Jenkins\workspace\game-of-life-default 中
+Cloning the remote Git repository
+Cloning repository https://github.com/Joyounger/game-of-life.git
+ > git.exe init C:\Program Files (x86)\Jenkins\workspace\game-of-life-default # timeout=10
+Fetching upstream changes from https://github.com/Joyounger/game-of-life.git
+ > git.exe --version # timeout=10
+ > git.exe fetch --tags --progress https://github.com/Joyounger/game-of-life.git +refs/heads/*:refs/remotes/origin/*
+ > git.exe config remote.origin.url https://github.com/Joyounger/game-of-life.git # timeout=10
+ > git.exe config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git.exe config remote.origin.url https://github.com/Joyounger/game-of-life.git # timeout=10
+Fetching upstream changes from https://github.com/Joyounger/game-of-life.git
+ > git.exe fetch --tags --progress https://github.com/Joyounger/game-of-life.git +refs/heads/*:refs/remotes/origin/*
+ > git.exe rev-parse "refs/remotes/origin/master^{commit}" # timeout=10
+ > git.exe rev-parse "refs/remotes/origin/origin/master^{commit}" # timeout=10
+Checking out Revision d4e03f28a7ccfeca4dcf21006a6ff199329ed979 (refs/remotes/origin/master)
+ > git.exe config core.sparsecheckout # timeout=10
+ > git.exe checkout -f d4e03f28a7ccfeca4dcf21006a6ff199329ed979
+Commit message: "Updated dependencies"
+First time build. Skipping changelog.
+[game-of-life-default] $ cmd.exe /C "mvn clean package && exit %%ERRORLEVEL%%"
+'mvn' 不是内部或外部命令，也不是可运行的程序
+或批处理文件。
+Build step '调用顶层 Maven 目标' marked build as failure
+Finished: FAILURE

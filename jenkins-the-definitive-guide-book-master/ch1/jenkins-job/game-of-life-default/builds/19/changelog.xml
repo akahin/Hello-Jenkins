@@ -1,0 +1,11 @@
+commit 74a2c2be9603d7ecdb51a6c553cfa83d312eca3c
+tree 5deaf6e2f262556c475577facaf1a03630f5fcb8
+parent 27592f990170529964fad0039a98f2842f3f8e47
+author leo <942510346@qq.com> 2018-07-11 17:34:58 +0800
+committer leo <942510346@qq.com> 2018-07-11 17:34:58 +0800
+
+    Restored the star
+
+
+
+:100644 100644 1bc2b7714928663dcfcba371b1df7e2780a1a204 ae8cd3cb3f8299836da932c198b4755f863b9d3b M	gameoflife-core/src/main/java/com/wakaleo/gameoflife/domain/Cell.java

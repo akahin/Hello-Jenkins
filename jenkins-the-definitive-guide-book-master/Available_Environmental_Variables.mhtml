@@ -1,0 +1,81 @@
+From: <Saved by Blink>
+Subject: Available Environmental Variables
+Date: Sat, 13 Jul 2018 08:13:26 -0000
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----MultipartBoundary--bme1p8ZUEkqMmo85FpIskWBBEKXdBO7mBbk7yKtJ1v----"
+
+------MultipartBoundary--bme1p8ZUEkqMmo85FpIskWBBEKXdBO7mBbk7yKtJ1v----
+Content-Type: text/html
+Content-ID: <frame-2504-711445f5-c37c-4ec6-9719-a082c6b13d7f@mhtml.blink>
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://localhost:8080/env-vars.html/
+
+<html><head><meta http-equiv=3D"Content-Type" content=3D"text/html; charset=
+=3DUTF-8"><title>Available Environmental Variables</title><style type=3D"te=
+xt/css">dt { font-weight: bold; }</style></head><body><p>The following vari=
+ables are available to shell scripts</p><dl><dt>BRANCH_NAME</dt><dd>For a m=
+ultibranch project, this will be set to the name of the branch being built,=
+ for example in case you wish to deploy to production from <code>master</co=
+de> but not from feature branches; if corresponding to some kind of change =
+request, the name is generally arbitrary (refer to <code>CHANGE_ID</code> a=
+nd <code>CHANGE_TARGET</code>).</dd><dt>CHANGE_ID</dt><dd>For a multibranch=
+ project corresponding to some kind of change request, this will be set to =
+the change ID, such as a pull request number, if supported; else unset.</dd=
+><dt>CHANGE_URL</dt><dd>For a multibranch project corresponding to some kin=
+d of change request, this will be set to the change URL, if supported; else=
+ unset.</dd><dt>CHANGE_TITLE</dt><dd>For a multibranch project correspondin=
+g to some kind of change request, this will be set to the title of the chan=
+ge, if supported; else unset.</dd><dt>CHANGE_AUTHOR</dt><dd>For a multibran=
+ch project corresponding to some kind of change request, this will be set t=
+o the username of the author of the proposed change, if supported; else uns=
+et.</dd><dt>CHANGE_AUTHOR_DISPLAY_NAME</dt><dd>For a multibranch project co=
+rresponding to some kind of change request, this will be set to the human n=
+ame of the author, if supported; else unset.</dd><dt>CHANGE_AUTHOR_EMAIL</d=
+t><dd>For a multibranch project corresponding to some kind of change reques=
+t, this will be set to the email address of the author, if supported; else =
+unset.</dd><dt>CHANGE_TARGET</dt><dd>For a multibranch project correspondin=
+g to some kind of change request, this will be set to the target or base br=
+anch to which the change could be merged, if supported; else unset.</dd><dt=
+>BUILD_NUMBER</dt><dd>The current build number, such as "153"</dd><dt>BUILD=
+_ID</dt><dd>The current build ID, identical to BUILD_NUMBER for builds crea=
+ted in 1.597+, but a YYYY-MM-DD_hh-mm-ss timestamp for older builds</dd><dt=
+>BUILD_DISPLAY_NAME</dt><dd>The display name of the current build, which is=
+ something like "#153" by default.</dd><dt>JOB_NAME</dt><dd>Name of the pro=
+ject of this build, such as "foo" or "foo/bar".</dd><dt>JOB_BASE_NAME</dt><=
+dd>Short Name of the project of this build stripping off folder paths, such=
+ as "foo" for "bar/foo".</dd><dt>BUILD_TAG</dt><dd>String of "jenkins-<i>${=
+JOB_NAME}</i>-<i>${BUILD_NUMBER}</i>". All forward slashes ("/") in the JOB=
+_NAME are replaced with dashes ("-"). Convenient to put into a resource fil=
+e, a jar file, etc for easier identification.</dd><dt>EXECUTOR_NUMBER</dt><=
+dd>The unique number that identifies the current executor (among executors =
+of the same machine) that=E2=80=99s carrying out this build. This is the nu=
+mber you see in the "build executor status", except that the number starts =
+from 0, not 1.</dd><dt>NODE_NAME</dt><dd>Name of the agent if the build is =
+on an agent, or "master" if run on master</dd><dt>NODE_LABELS</dt><dd>White=
+space-separated list of labels that the node is assigned.</dd><dt>WORKSPACE=
+</dt><dd>The absolute path of the directory assigned to the build as a work=
+space.</dd><dt>JENKINS_HOME</dt><dd>The absolute path of the directory assi=
+gned on the master node for Jenkins to store data.</dd><dt>JENKINS_URL</dt>=
+<dd>Full URL of Jenkins, like <tt>http://server:port/jenkins/</tt> (note: o=
+nly available if <i>Jenkins URL</i> set in system configuration)</dd><dt>BU=
+ILD_URL</dt><dd>Full URL of this build, like <tt>http://server:port/jenkins=
+/job/foo/15/</tt> (<i>Jenkins URL</i> must be set)</dd><dt>JOB_URL</dt><dd>=
+Full URL of this job, like <tt>http://server:port/jenkins/job/foo/</tt> (<i=
+>Jenkins URL</i> must be set)</dd><dt>GIT_COMMIT</dt><dd>The commit hash be=
+ing checked out.</dd><dt>GIT_PREVIOUS_COMMIT</dt><dd>The hash of the commit=
+ last built on this branch, if any.</dd><dt>GIT_PREVIOUS_SUCCESSFUL_COMMIT<=
+/dt><dd>The hash of the commit last successfully built on this branch, if a=
+ny.</dd><dt>GIT_BRANCH</dt><dd>The remote branch name, if any.</dd><dt>GIT_=
+LOCAL_BRANCH</dt><dd>The local branch name being checked out, if applicable=
+.</dd><dt>GIT_URL</dt><dd>The remote URL. If there are multiple, will be <c=
+ode>GIT_URL_1</code>, <code>GIT_URL_2</code>, etc.</dd><dt>GIT_COMMITTER_NA=
+ME</dt><dd>The configured Git committer name, if any.</dd><dt>GIT_AUTHOR_NA=
+ME</dt><dd>The configured Git author name, if any.</dd><dt>GIT_COMMITTER_EM=
+AIL</dt><dd>The configured Git committer email, if any.</dd><dt>GIT_AUTHOR_=
+EMAIL</dt><dd>The configured Git author email, if any.</dd><dt>SVN_REVISION=
+</dt><dd>Subversion revision number that's currently checked out to the wor=
+kspace, such as "12345"</dd><dt>SVN_URL</dt><dd>Subversion URL that's curre=
+ntly checked out to the workspace.</dd></dl></body></html>
+------MultipartBoundary--bme1p8ZUEkqMmo85FpIskWBBEKXdBO7mBbk7yKtJ1v------
